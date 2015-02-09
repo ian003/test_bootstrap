@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 	<!-- page specific plugin styles -->
-
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
 	<!-- text fonts -->
 	<link rel="stylesheet" href="assets/css/ace-fonts.css" />
 
@@ -34,12 +34,15 @@
 		  <style type="text/css">
 		  	/*.col-xs-12{
 		  		height: 800px;
-		  	}*/
-		  </style>
-		  <!-- ace settings handler -->
-		  <script src="assets/js/ace-extra.min.js"></script>
+		  		}*/
+		  		</style>
 
-		  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		  		<!-- ace settings handler -->
+		  		<script src="assets/js/ace-extra.min.js"></script>
+
+
+
+		  		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lte IE 8]>
 		<script src="assets/js/html5shiv.js"></script>
@@ -51,7 +54,7 @@
 		<!-- #section:basics/navbar.layout -->
 		<div id="navbar" class="navbar navbar-default">
 			<script type="text/javascript">
-				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 			</script>
 
 			<div class="navbar-container" id="navbar-container">
@@ -117,7 +120,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="#" id="id-btn-logout">
 										<i class="ace-icon fa fa-power-off"></i>
 										退出
 									</a>
@@ -136,13 +139,13 @@
 		<!-- /section:basics/navbar.layout -->
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			try{ace.settings.check('main-container' , 'fixed')}catch(e){}
 			</script>
 
 			<!-- #section:basics/sidebar -->
 			<div id="sidebar" class="sidebar                  responsive">
 				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
 				</script>
 
 				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
@@ -262,7 +265,7 @@
 
 				<!-- /section:basics/sidebar.layout.minimize -->
 				<script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
 				</script>
 			</div>
 
@@ -271,7 +274,7 @@
 				<!-- #section:basics/content.breadcrumbs -->
 				<div class="breadcrumbs" id="breadcrumbs">
 					<script type="text/javascript">
-						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 					</script>
 
 					<ul class="breadcrumb">
@@ -290,92 +293,94 @@
 
 					<div class="row">
 						<div class="col-xs-12" >
-								<iframe id="pageContentIframe" name="pageContentIframe" frameborder="0" scrolling="yes"  width="100%" height="500px">
-								</iframe>
+							<iframe id="pageContentIframe" name="pageContentIframe" frameborder="0" scrolling="yes"  width="100%" height="500px">
+							</iframe>
+						</div>
 					</div><!-- /.row -->
 				</div><!-- /.page-content -->
 			</div><!-- /.main-content -->
 
-			<div class="footer footer-fixed">
-				<div class="footer-inner">
-					<!-- #section:basics/footer -->
-					<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">中国手游</span>
-							CMGE &copy; 2013-2014
-						</span>
+				<!-- <div class="footer"> -->
+				<div class="footer footer-fixed">  
+					<div class="footer-inner">
+						<!-- #section:basics/footer -->
+						<div class="footer-content">
+							<span class="bigger-120">
+								<span class="blue bolder">中国手游</span>
+								CMGE &copy; 2013-2014
+							</span>
+						</div>
 					</div>
-					<!-- /section:basics/footer -->
 				</div>
-			</div>
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
+				<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+					<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+				</a>
+			</div><!-- /.main-container -->
 
 
-		<!-- modify password modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
-		aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-		<div class="modal-dialog in">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">修改密码</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal" id="validation-form" method="get">
+			<!-- modify password modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+			aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+			<div class="modal-dialog in">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">修改密码</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" id="validation-form" method="get">
 
-						<div class="form-group">
-							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password">新密码:</label>
+							<div class="form-group">
+								<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password">新密码:</label>
 
-							<div class="col-xs-12 col-sm-9">
-								<div class="clearfix">
-									<input type="password" name="password" id="password" class="col-xs-12 col-sm-9" />
+								<div class="col-xs-12 col-sm-9">
+									<div class="clearfix">
+										<input type="password" name="password" id="password" class="col-xs-12 col-sm-9" />
+									</div>
+								</div>
+							</div>
+
+							<div class="space-2"></div>
+
+							<div class="form-group">
+								<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2">确认密码:</label>
+
+								<div class="col-xs-12 col-sm-9">
+									<div class="clearfix">
+										<input type="password" name="password2" id="password2" class="col-xs-12 col-sm-9" />
+									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="space-2"></div>
-
-						<div class="form-group">
-							<label class="control-label col-xs-12 col-sm-3 no-padding-right" for="password2">确认密码:</label>
-
-							<div class="col-xs-12 col-sm-9">
-								<div class="clearfix">
-									<input type="password" name="password2" id="password2" class="col-xs-12 col-sm-9" />
-								</div>
-							</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							<button type="submit" class="btn btn-primary" >确认修改</button>
+							<input type="reset" name="reset" style="display: none;" />
 						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<button type="submit" class="btn btn-primary" >确认修改</button>
-						<input type="reset" name="reset" style="display: none;" />
-					</div>
-				</form>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-	<!-- modify password modal end -->
+					</form>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<!-- modify password modal end -->
+
+		<!-- logout dialog -->
+		<div id="dialog-confirm" class="hide">
+			<p class="bigger-110 bolder center">
+				<i class="ace-icon fa fa-hand-o-right blue"></i>
+				您确认要退出本次登录吗?
+			</p>
+		</div><!-- #dialog-confirm -->
 
 
+		<!-- basic scripts -->
 
-
-
-
-
-
-
-	<!-- basic scripts -->
-
-	<!--[if !IE]> -->
-	<script type="text/javascript">
+		<!--[if !IE]> -->
+		<script type="text/javascript">
 		window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
-	</script>
+		</script>
 
-	<!-- <![endif]-->
+		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script type="text/javascript">
@@ -383,11 +388,12 @@
 </script>
 <![endif]-->
 <script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
+<script src="assets/js/jquery-ui.min.js"></script>
 <script src="assets/js/jquery.validate.min.js"></script>
 <!-- ace scripts -->
 <script src="assets/js/ace-elements.min.js"></script>
@@ -395,43 +401,43 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
-	$(function(){
+$(function(){
 
-		$('#myModal').on('hide.bs.modal', function () {
-			$("input[type=reset]").trigger('click');
-			$('.form-group').removeClass('has-error').addClass('has-info');
-			vFrom.resetForm();
+	$('#myModal').on('hide.bs.modal', function () {
+		$("input[type=reset]").trigger('click');
+		$('.form-group').removeClass('has-error').addClass('has-info');
+		vFrom.resetForm();
 
-		});
+	});
 
 
-		var vFrom = $('#validation-form').validate({
-			errorElement: 'div',
-			errorClass: 'help-block',
-			focusInvalid: false,
-			rules: {
-				password: {
-					required: true,
-					minlength: 6
-				},
-				password2: {
-					required: true,
-					minlength: 6,
-					equalTo: "#password"
-				}
+	var vFrom = $('#validation-form').validate({
+		errorElement: 'div',
+		errorClass: 'help-block',
+		focusInvalid: false,
+		rules: {
+			password: {
+				required: true,
+				minlength: 6
 			},
+			password2: {
+				required: true,
+				minlength: 6,
+				equalTo: "#password"
+			}
+		},
 
-			messages: {
-				password: {
-					required: "请输入密码",
-					minlength: $.validator.format("密码不能小于{0}个字符.")
-				},
-				password2: {
-					required: "请输入确认密码",
-					minlength: $.validator.format("确认密码不能小于{0}个字符."),
-					equalTo: "两次输入密码不一致不一致"
-				}
+		messages: {
+			password: {
+				required: "请输入密码",
+				minlength: $.validator.format("密码不能小于{0}个字符.")
 			},
+			password2: {
+				required: "请输入确认密码",
+				minlength: $.validator.format("确认密码不能小于{0}个字符."),
+				equalTo: "两次输入密码不一致不一致"
+			}
+		},
 
 	invalidHandler: function (event, validator) { //display error alert on form submit   
 		$('.alert-danger', $('.login-form')).show();
@@ -460,7 +466,50 @@
 			alert("invalidHandler");   
 		}
 	});
+
+//override dialog's title function to allow for HTML titles
+$.widget("ui.dialog", $.extend({}, $.ui.dialog.prototype, {
+	_title: function(title) {
+		var $title = this.options.title || '&nbsp;'
+		if( ("title_html" in this.options) && this.options.title_html == true )
+			title.html($title);
+		else title.text($title);
+	}
+}));
+$( "#id-btn-logout" ).on('click', function(e) {
+	e.preventDefault();
+
+	$( "#dialog-confirm" ).removeClass('hide').dialog({
+		resizable: false,
+		modal: true,
+		title: "<div class='widget-header'><h4 class='smaller'><i class='ace-icon fa fa-exclamation-triangle red'></i>系统提示</h4></div>",
+		title_html: true,
+		buttons: [
+		{
+			html: "<i class='ace-icon fa fa-times'></i>&nbsp; 取消",
+			"class" : "btn btn-xs",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+		,
+		{
+			html: "<i class='ace-icon fa fa-check'></i>&nbsp; 确定",
+			"class" : "btn btn-danger btn-xs",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+		]
+	});
 });
+
+});
+
+
+
+
+
 
 </script>
 
